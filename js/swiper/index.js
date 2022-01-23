@@ -62,22 +62,33 @@ const startInizilationSwipper = () => {
 
         //  Скролим с плавной прокруткой наверх страницы
 
-        const listenerClickThumbSlide = () => {
-        // window.scrollTo({
+        const listenerClickThumbSlide = (e, time, where) => {
+        
+        // window.scroll({
         //     top: 0,
-        //     behavior: 'smooth',
+        //     behavior: 'smooth'
         // });
+        
+         var eTop = e.getBoundingClientRect().top;
+            var eAmt = eTop / 100;
+            var curTime = 0;
+            while (curTime <= time) {
+                window.setTimeout(SVS_B, curTime, eAmt, where);
+                curTime += time / 100;
+            }
+        }
 
-        window.scroll({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+        function SVS_B(eAmt, where) {
+            if(where == "top" || where == "")
+                window.scrollBy(0, eAmt / 2);
+            if (where == "top")
+                window.scrollBy(0, eAmt);
+        }
 
         // Отслеживаем клик по одной картинки в preview
 
         thumbSlide.forEach((item) => {
-            item.addEventListener('click', () => listenerClickThumbSlide())
+            item.addEventListener('click', (e) => listenerClickThumbSlide(e, 275, 'top'))
         })
     }
 }

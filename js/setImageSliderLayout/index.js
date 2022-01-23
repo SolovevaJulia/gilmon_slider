@@ -129,7 +129,6 @@ class SetImageSliderLayout {
         getAllElements.forEach((item) => {
             item.remove()
             const getAllElements = document.querySelectorAll('.swiper-slide')
-            console.log('getAllElements', getAllElements.length)
             if (getAllElements.length === 0) {
                 if (this.staticImage) {
                     this.addAllElementsWithClass()
@@ -139,9 +138,6 @@ class SetImageSliderLayout {
                 
             }
         })
-        // setTimeout(() => {
-        //     this.addAllElementsWithClass()
-        // }, 300)
     }
 
 }
