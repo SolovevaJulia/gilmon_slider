@@ -60,7 +60,6 @@ class SetImageSliderLayout {
         fetch(this.api)
                 .then(response => response.json())
                 .then(data => {
-                    console.log('this.limit', this.limit)
                     const photos = this.limit === 0 ? data : data.slice(0, this.limit)
                     this.imageList = photos
                     this.addAllElementsWithClass()

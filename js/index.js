@@ -97,11 +97,11 @@ const setImageSlider = new SetImageSliderLayout({
 window.addEventListener("resize", () => {
     if (
         document.documentElement.clientWidth >= 870 &&
-        document.documentElement.clientWidth <= 900
+        document.documentElement.clientWidth <= 901
     ) {
         setImageSlider.reInstall();
     } else if (
-        document.documentElement.clientWidth >= 970 &&
+        document.documentElement.clientWidth >= 902 &&
         document.documentElement.clientWidth <= 1000
     ) {
         setImageSlider.reInstall();

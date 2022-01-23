@@ -106,9 +106,13 @@
         border-top: 1px solid #E5E5E5
         &-button
             &-photo
+                display: flex
+                justify-content: center
+                align-items: center
                 margin-right: 10px
                 border-radius: 10px
-                width: 50px
+                // width: 50px
+                width: 95px
                 height: 50px
                 background-color: #F5F5F5
             &-send
@@ -127,6 +131,7 @@
             border-radius: 10px
             margin-right: 10px
             width: 240px
+            min-width: calc(95% - 100px)
     &-rules
         padding: 0 20px 0 20px
         font-weight: 500
