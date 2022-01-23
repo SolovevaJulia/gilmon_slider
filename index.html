@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <title>Gilmon_slider</title>
+    </head>
+
+    <body>
+        <section class="comments">
+            <div class="container">
+                <div class="slider-flex">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper main-wrapper">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-wrapper">
+                        <div class="comment-top">
+                            <span class="comment-head">Отзыв</span>
+                            <button class="comment-close">
+                                <img
+                                    src="./img/ic_close.svg"
+                                    alt="icon-close"
+                                />
+                            </button>
+                        </div>
+                        <div class="comment-main">
+                            <div class="comment-item">
+                                <div class="comment-item-user">
+                                    <img
+                                        src="./img/user-photo.jpg"
+                                        alt="Фотография пользователя"
+                                        class="comment-item-user-img"
+                                    />
+                                    <div class="comment-item-user-text">
+                                        <p class="comment-item-user-name">
+                                            Артем Давыдов
+                                        </p>
+                                        <span class="comment-item-user-time"
+                                            >Ругательный · 39 минут назад</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="comment-item-text">
+                                    Заказали две пиццы: Леонардо и Мексиканская.
+                                    Очень вкусные, но можно острее. Спасибо за
+                                    приятный вечер :)
+                                </p>
+                                <div class="comment-item-status">
+                                    <div class="comment-item-like">
+                                        <img
+                                            src="./img/ic_like.svg"
+                                            alt="icon-like"
+                                            class="comment-item-like-icon"
+                                        />
+                                        <span class="comment-item-like-num"
+                                            >5</span
+                                        >
+                                    </div>
+                                    <div class="comment-item-answers">
+                                        <img
+                                            src="./img/ic_reviews.svg"
+                                            alt="reviews-icon"
+                                            class="comment-item-answers-icon"
+                                        />
+                                        <span class="comment-item-answers-num"
+                                            >12 ответов</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-answer">
+                                <div class="comment-answer-company">
+                                    <img
+                                        src="./img/company-logo.jpg"
+                                        alt="Логотип компании"
+                                        class="comment-answer-company-img"
+                                    />
+                                    <div class="comment-answer-company-head">
+                                        <div
+                                            class="comment-answer-company-name"
+                                        >
+                                            <p
+                                                class="comment-answer-company-name-text"
+                                            >
+                                                Domino’s Pizza
+                                            </p>
+                                            <img
+                                                src="./img/check.svg"
+                                                alt="icon-check"
+                                                class="comment-answer-company-name-check"
+                                            />
+                                        </div>
+                                        <span
+                                            class="comment-answer-company-time"
+                                            >Ответ партнера · 1 час назад</span
+                                        >
+                                    </div>
+                                </div>
+                                <p class="comment-answer-text">
+                                    Добрый день! Искренне жаль, что не смогли
+                                    угодить вам по вкусу и количеству начинки.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="comment-form">
+                            <button class="comment-form-button-photo">
+                                <img src="./img/add.svg" alt="Добавить фото" />
+                            </button>
+                            <input
+                                placeholder="Ваш ответ"
+                                type="text"
+                                class="comment-form-input"
+                            />
+                            <button class="comment-form-button-send">
+                                <img
+                                    src="./img/ic_arrow-up.svg"
+                                    alt="Отправить отзыв"
+                                />
+                            </button>
+                        </div>
+                        <p class="comment-rules">
+                            Рекомендуем ознакомиться с
+                            <a class="comment-rules-green"
+                                >правилами модерации</a
+                            >
+                        </p>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                </div>
+
+                <div class="photo-num">Доступно 32 фотографии</div>
+
+               <div class="swiper thumbs">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper thumbs-wrapper">
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="js/swiper/index.js"></script>
+        <script src="js/setImageSliderLayout/index.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
