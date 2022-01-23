@@ -66,10 +66,9 @@ const startInizilationSwipper = () => {
 
     if (getBrowserId() === 2) {
         const script = document.createElement('script')
+        script.setAttribute("defer", '')
         script.src = 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js'
-        script.attributes = 'defer'
         document.body.insertAdjacentElement("beforeEnd", script)
-        console.log('Chrome')
     }
          
         const thumbSlide = document.querySelectorAll('.review-img')
