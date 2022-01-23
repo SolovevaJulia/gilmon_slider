@@ -47,48 +47,26 @@ const startInizilationSwipper = () => {
                     swiper: swiperThumbs,
                 },
             });
-
-    //    const browser = navigator.userAgent.toLowerCase(); 
-        
-    
-            
+     
     //  При разрешение меньше или равно 570 получаем все картинки thunmb slider
     
-
-
     if (document.documentElement.clientWidth <= 570) {
          //  Получаем все картинки относящиеся к preview
         const thumbSlide = document.querySelectorAll('.review-img')
 
         //  Скролим с плавной прокруткой наверх страницы
 
-        const listenerClickThumbSlide = (e, time, where) => {
-        
-        // window.scroll({
-        //     top: 0,
-        //     behavior: 'smooth'
-        // });
-        
-         var eTop = e.getBoundingClientRect().top;
-            var eAmt = eTop / 100;
-            var curTime = 0;
-            while (curTime <= time) {
-                window.setTimeout(SVS_B, curTime, eAmt, where);
-                curTime += time / 100;
-            }
-        }
-
-        function SVS_B(eAmt, where) {
-            if(where == "top" || where == "")
-                window.scrollBy(0, eAmt / 2);
-            if (where == "top")
-                window.scrollBy(0, eAmt);
-        }
+        const listenerClickThumbSlide = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }
 
         // Отслеживаем клик по одной картинки в preview
 
         thumbSlide.forEach((item) => {
-            item.addEventListener('click', (e) => listenerClickThumbSlide(e, 275, 'top'))
+            item.addEventListener('click', () => listenerClickThumbSlide())
         })
     }
 }
