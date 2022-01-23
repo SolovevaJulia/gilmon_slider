@@ -10,14 +10,15 @@ const startInizilationSwipper = () => {
         },
         breakpoints: {
             0: {
+                allowTouchMove: false,
                 direction: 'vertical',
                 autoHeight: false,
                 slidesPerView: 8,
                 spaceBetween: 0,
                 grid: {
                 fill: 'row',
-                rows: 2
-            }
+                rows: 2,
+                }
             },
             900: {
                     direction: "horizontal",
