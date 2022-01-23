@@ -19,7 +19,7 @@ const startInizilationSwipper = () => {
                 rows: 2
             }
             },
-            376: {
+            568: {
                     direction: "horizontal",
                     slidesPerView: 8
                     },
@@ -50,7 +50,7 @@ const startInizilationSwipper = () => {
 
     //  При разрешение меньше или равно 375 получаем все картинки thunmb slider
 
-    if (window.innerWidth <= 400) {
+    if (document.documentElement.clientWidth <= 570) {
          //  Получаем все картинки относящиеся к preview
         const thumbSlide = document.querySelectorAll('.review-img')
 
