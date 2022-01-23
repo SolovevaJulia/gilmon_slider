@@ -50,7 +50,14 @@ class SetImageSliderLayout {
         } else if (this.keyImage.length === 0 && typeof this.api !== String) {
             throw 'Ошибка: [keyImage: Не должна быть пустой и должна передаваться как строка]'
         } else {
-            fetch(this.api)
+            this.getApiData()
+        }
+    }
+
+    // Выдергиваем с переданных классов элементы DOM дерева
+
+    getApiData () {
+        fetch(this.api)
                 .then(response => response.json())
                 .then(data => {
                     console.log('this.limit', this.limit)
@@ -58,10 +65,8 @@ class SetImageSliderLayout {
                     this.imageList = photos
                     this.addAllElementsWithClass()
                 })
-        }
     }
 
-    // Выдергиваем с переданных классов элементы DOM дерева
 
     addAllElementsWithClass() {
 
@@ -123,11 +128,20 @@ class SetImageSliderLayout {
         const getAllElements = document.querySelectorAll('.swiper-slide')
         getAllElements.forEach((item) => {
             item.remove()
-            console.log('remove')
+            const getAllElements = document.querySelectorAll('.swiper-slide')
+            console.log('getAllElements', getAllElements.length)
+            if (getAllElements.length === 0) {
+                if (this.staticImage) {
+                    this.addAllElementsWithClass()
+                } else {
+                    this.getApiData()
+                }
+                
+            }
         })
-        setTimeout(() => {
-            this.addAllElementsWithClass()
-        }, 300)
+        // setTimeout(() => {
+        //     this.addAllElementsWithClass()
+        // }, 300)
     }
 
 }

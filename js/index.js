@@ -80,26 +80,29 @@ const imageListTest = [
 
 
 
-const setImageSlider = new SetImageSliderLayout({
-    staticImage: true,
-    classNames: ['main-wrapper', 'thumbs-wrapper'],
-    imageList: imageListTest,
-    keyImage: 'image',
-    }
-)
-
-// Параметры для динамических картинок (принимаем по API)
-
-// new SetImageSliderLayout({
-//         staticImage: false,
-//         classNames: ['main-wrapper', 'thumbs-wrapper'],
-//         api: 'https://jsonplaceholder.typicode.com/photos',
-//         keyImage: 'thumbnailUrl',
-//         limit: 10
+// const setImageSlider = new SetImageSliderLayout({
+//     staticImage: true,
+//     classNames: ['main-wrapper', 'thumbs-wrapper'],
+//     imageList: imageListTest,
+//     keyImage: 'image',
 //     }
 // )
 
-window.addEventListener('orientationchange', () => {
-    console.log('orientationchange', window.orientation)
-    setImageSlider.reInstall()
-})
+// Параметры для динамических картинок (принимаем по API)
+
+const setImageSlider = new SetImageSliderLayout({
+        staticImage: false,
+        classNames: ['main-wrapper', 'thumbs-wrapper'],
+        api: 'https://jsonplaceholder.typicode.com/photos',
+        keyImage: 'thumbnailUrl',
+        limit: 10
+    }
+)
+
+window.addEventListener('resize', () => {
+        if (document.documentElement.clientWidth >= 870 && document.documentElement.clientWidth <= 900) {
+            setImageSlider.reInstall()
+        } else if (document.documentElement.clientWidth >= 970 && document.documentElement.clientWidth <= 1000) {
+            setImageSlider.reInstall()
+        }
+    })

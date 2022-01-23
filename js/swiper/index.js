@@ -19,7 +19,7 @@ const startInizilationSwipper = () => {
                 rows: 2
             }
             },
-            568: {
+            900: {
                     direction: "horizontal",
                     slidesPerView: 8
                     },
@@ -48,12 +48,14 @@ const startInizilationSwipper = () => {
                 },
             });
 
-       const browser = navigator.userAgent.toLowerCase(); 
+    //    const browser = navigator.userAgent.toLowerCase(); 
         
     
             
     //  При разрешение меньше или равно 570 получаем все картинки thunmb slider
     
+
+
     if (document.documentElement.clientWidth <= 570) {
          //  Получаем все картинки относящиеся к preview
         const thumbSlide = document.querySelectorAll('.review-img')
@@ -67,8 +69,6 @@ const startInizilationSwipper = () => {
         });
     }
 
-        
-
         // Отслеживаем клик по одной картинки в preview
 
         thumbSlide.forEach((item) => {
@@ -76,4 +76,3 @@ const startInizilationSwipper = () => {
         })
     }
 }
-
