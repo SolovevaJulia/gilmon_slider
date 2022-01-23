@@ -63,9 +63,14 @@ const startInizilationSwipper = () => {
         //  Скролим с плавной прокруткой наверх страницы
 
         const listenerClickThumbSlide = () => {
-        window.scrollTo({
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth',
+        // });
+
+        window.scroll({
             top: 0,
-            behavior: 'smooth',
+            behavior: 'smooth'
         });
     }
 
