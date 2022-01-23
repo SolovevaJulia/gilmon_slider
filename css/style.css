@@ -319,8 +319,8 @@ input {
 
 @media screen and (max-width: 568px) {
   .container {
-    min-width: 95%;
-    max-width: 568px;
+    min-width: 90%;
+    max-width: 414px;
   }
 
   .slider-flex {
@@ -394,7 +394,8 @@ input {
   }
 
   .thumb-slide {
-    width: 160px;
+    max-width: 160px;
+    min-width: 47%;
     height: 120px !important;
   }
 
