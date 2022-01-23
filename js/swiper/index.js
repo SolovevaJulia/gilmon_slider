@@ -48,8 +48,12 @@ const startInizilationSwipper = () => {
                 },
             });
 
-    //  При разрешение меньше или равно 375 получаем все картинки thunmb slider
-
+       const browser = navigator.userAgent.toLowerCase(); 
+        
+    
+            
+    //  При разрешение меньше или равно 570 получаем все картинки thunmb slider
+    
     if (document.documentElement.clientWidth <= 570) {
          //  Получаем все картинки относящиеся к preview
         const thumbSlide = document.querySelectorAll('.review-img')
@@ -62,6 +66,8 @@ const startInizilationSwipper = () => {
             behavior: 'smooth',
         });
     }
+
+        
 
         // Отслеживаем клик по одной картинки в preview
 

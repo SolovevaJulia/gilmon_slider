@@ -3,6 +3,7 @@ class SetImageSliderLayout {
     constructor(payload) {
 
         const { staticImage,classNames, imageList, api, limit, keyImage } = payload
+
         this.staticImage = staticImage
         this.classNames = classNames
         this.imageList = imageList || []
@@ -86,7 +87,6 @@ class SetImageSliderLayout {
     rerenderAddImageLayoutSlider() {
 
         if (this.startIndexClassName === this.lengthClassName) {
-            console.log('Все элеменеты изображение добавлены')
             startInizilationSwipper()
         } else {
             this.addImageLayoutSlider()
@@ -118,6 +118,18 @@ class SetImageSliderLayout {
         this.startIndexClassName = this.startIndexClassName + 1
         this.rerenderAddImageLayoutSlider()
     }
+
+    reInstall() {
+        const getAllElements = document.querySelectorAll('.swiper-slide')
+        getAllElements.forEach((item) => {
+            item.remove()
+            console.log('remove')
+        })
+        setTimeout(() => {
+            this.addAllElementsWithClass()
+        }, 300)
+    }
+
 }
 
 

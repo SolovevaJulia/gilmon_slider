@@ -78,7 +78,9 @@ const imageListTest = [
 // keyImage = указываем тот клююч, который приходит в массиве с api
 // limit = Если не указываем лимит, то он не учитывается.
 
-new SetImageSliderLayout({
+
+
+const setImageSlider = new SetImageSliderLayout({
     staticImage: true,
     classNames: ['main-wrapper', 'thumbs-wrapper'],
     imageList: imageListTest,
@@ -97,3 +99,7 @@ new SetImageSliderLayout({
 //     }
 // )
 
+window.addEventListener('orientationchange', () => {
+    console.log('orientationchange', window.orientation)
+    setImageSlider.reInstall()
+})
