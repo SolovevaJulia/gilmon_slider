@@ -48,10 +48,30 @@ const startInizilationSwipper = () => {
                 },
             });
      
-    //  При разрешение меньше или равно 570 получаем все картинки thunmb slider
+    //  При разрешение меньше или равно 900 получаем все картинки thunmb slider
     
-    if (document.documentElement.clientWidth <= 570) {
+    if (document.documentElement.clientWidth <= 900) {
          //  Получаем все картинки относящиеся к preview
+         function getBrowserId () {
+
+        var
+            aKeys = ["MSIE", "Firefox", "Safari", "Chrome", "Opera"],
+            sUsrAg = navigator.userAgent, nIdx = aKeys.length - 1;
+
+        for (nIdx; nIdx > -1 && sUsrAg.indexOf(aKeys[nIdx]) === -1; nIdx--);
+
+        return nIdx
+
+    }
+
+    if (getBrowserId() === 2) {
+        const script = document.createElement('script')
+        script.src = 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js'
+        script.attributes = 'defer'
+        document.body.insertAdjacentElement("beforeEnd", script)
+        console.log('Chrome')
+    }
+         
         const thumbSlide = document.querySelectorAll('.review-img')
 
         //  Скролим с плавной прокруткой наверх страницы
